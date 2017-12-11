@@ -19,3 +19,7 @@
 * $h_\theta(x)$ will give us the probability that our output is 1. For example, $h_\theta(x) = 0.7$ gives us a probability of 70% that our output is 1.
 
 ### 1c: Decision boundary
+
+* This is the curve in $x$ space for which $\theta^T x = 0$ or $h_\theta (x) = 0.5$, i.e., there is equal probability of $y=0$ and $y=1$.
+
+* $\theta^T x > 0$ indicates regions where probability of $y=1$ is greater, and $\theta^T x < 0$ indicates regions where probability of $y=0$ is greater.

@@ -10,7 +10,7 @@
 
 ### 1b: Hypothesis representation
 
-* Let the form for our hypotheses $h_\theta(x)$ to satisfy $0 \leq h_\theta(x) \leq 1$. This is accomplished by plugging $h_\theta(x) = \theta^T X$ into the Logistic Function.
+* Let the form for our hypotheses $h_\theta(x)$ to satisfy $0 \leq h_\theta(x) \leq 1$. This is accomplished by plugging $h_\theta(x) = \theta^T X$ into the Logistic Function (also called the Sigmoid function).
 
 * \begin{align*}& h_\theta (x) = g ( \theta^T x ) \newline \newline& z = \theta^T x \newline& g(z) = \dfrac{1}{1 + e^{-z}}\end{align*}
 
@@ -23,3 +23,15 @@
 * This is the curve in $x$ space for which $\theta^T x = 0$ or $h_\theta (x) = 0.5$, i.e., there is equal probability of $y=0$ and $y=1$.
 
 * $\theta^T x > 0$ indicates regions where probability of $y=1$ is greater, and $\theta^T x < 0$ indicates regions where probability of $y=0$ is greater.
+
+## Lecture 2: Logistic Regression Model
+
+### 2a: Cost function
+
+* We cannot use the same cost function that we use for linear regression because the Logistic Function will cause the output to be wavy, causing many local optima. In other words, it will not be a convex function.
+
+* Instead, our cost function for logistic regression looks like:
+
+\begin{align*}& J(\theta) = \dfrac{1}{m} \sum_{i=1}^m \mathrm{Cost}(h_\theta(x^{(i)}),y^{(i)}) \newline & \mathrm{Cost}(h_\theta(x),y) = -\log(h_\theta(x)) \; & \text{if y = 1} \newline & \mathrm{Cost}(h_\theta(x),y) = -\log(1-h_\theta(x)) \; & \text{if y = 0}\end{align*}
+
+* \begin{align*}& \mathrm{Cost}(h_\theta(x),y) = 0 \text{ if } h_\theta(x) = y \newline & \mathrm{Cost}(h_\theta(x),y) \rightarrow \infty \text{ if } y = 0 \; \mathrm{and} \; h_\theta(x) \rightarrow 1 \newline & \mathrm{Cost}(h_\theta(x),y) \rightarrow \infty \text{ if } y = 1 \; \mathrm{and} \; h_\theta(x) \rightarrow 0 \newline \end{align*}

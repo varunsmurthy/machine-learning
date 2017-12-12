@@ -55,3 +55,12 @@ $$ \mathrm{Cost}(h_\theta(x),y) = - y \; \log(h_\theta(x)) - (1 - y) \log(1 - h_
 * The vector form of the gradient descent algorithm is 
 
 $$ \theta := \theta - \frac{\alpha}{m} X^{T} (g(X \theta ) - \vec{y}) $$
+
+
+### 2c: Advanced optimization
+
+* "Conjugate gradient", "BFGS", and "L-BFGS" are more sophisticated, faster ways to optimize θ that can be used instead of gradient descent.
+
+* We first need to provide a function that evaluates the cost function and the various partial derivatives of the cost function with respect to the model parameters.
+
+* Then we can use octave's "fminunc()" optimization algorithm along with the "optimset()" function that creates an object containing the options we want to send to "fminunc()".

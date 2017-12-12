@@ -37,3 +37,13 @@
 * Here, the cost function is zero if the model prediction is accurate and tends to infinity in the case of a false negative ($h_\theta(x)=0$ when $y=1$) or a false positive ($h_\theta(x)=1$ when $y=0$).
 
 \begin{align*}& \mathrm{Cost}(h_\theta(x),y) = 0 \text{ if } h_\theta(x) = y \newline & \mathrm{Cost}(h_\theta(x),y) \rightarrow \infty \text{ if } y = 0 \; \mathrm{and} \; h_\theta(x) \rightarrow 1 \newline & \mathrm{Cost}(h_\theta(x),y) \rightarrow \infty \text{ if } y = 1 \; \mathrm{and} \; h_\theta(x) \rightarrow 0 \newline \end{align*}
+
+### 2b: Simplified cost function and gradient descent
+
+* The conditional cost function can be combined as 
+
+$$ \mathrm{Cost}(h_\theta(x),y) = - y \; \log(h_\theta(x)) - (1 - y) \log(1 - h_\theta(x))$$
+
+* The vectorized form of the cost equation is
+
+\begin{align*} & h = g(X\theta)\newline & J(\theta) = \frac{1}{m} \cdot \left(-y^{T}\log(h)-(1-y)^{T}\log(1-h)\right) \end{align*}

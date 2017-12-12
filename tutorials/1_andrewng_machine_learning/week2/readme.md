@@ -39,7 +39,9 @@
 
 * Minimizing the cost function $J(\theta)$, i.e., determining the $(n+1)$ vector $\theta$, used the gradient descent approach. Alternatively, the normal equation method involves setting the partial derivatives of the cost function with respect to the various model parameters $(i.e., \theta_0, \theta_0, ..)$ to zero. This gives us $(n+1)$ equations for the $(n+1)$ unknown $\theta$ variables. Solving these,
 
-$$ \theta = (X^T X)^{-1}X^T y $$
+$$ \theta = (X^T X)^{-1}X^T y $$  
+
+where $X$ is called the design matrix, and each row of the design matrix represents the inputs of the $i^{th}$ training data set (i.e., each row of $X$ is $x^{(i)T}$).
 
 * No need to choose the learning parameter, and no need to iterate. However, slow for large values($> 10^6$) of the model parameters ($n$). Computing the inverse of $X^T X$ is an $O(n^3)$ operation.
 

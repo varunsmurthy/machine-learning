@@ -47,3 +47,11 @@ $$ \mathrm{Cost}(h_\theta(x),y) = - y \; \log(h_\theta(x)) - (1 - y) \log(1 - h_
 * The vectorized form of the cost equation is
 
 \begin{align*} & h = g(X\theta)\newline & J(\theta) = \frac{1}{m} \cdot \left(-y^{T}\log(h)-(1-y)^{T}\log(1-h)\right) \end{align*}
+
+* The gradient descent algorithm can be used to minimize the cost function for Logistic regression and has the same form as the gradient descent algorithm for linear regression:
+
+\begin{align*} & Repeat \; \lbrace \newline & \; \theta_j := \theta_j - \frac{\alpha}{m} \sum_{i=1}^m (h_\theta(x^{(i)}) - y^{(i)}) x_j^{(i)} \newline & \rbrace \end{align*}
+
+* The vector form of the gradient descent algorithm is 
+
+$$ \theta := \theta - \frac{\alpha}{m} X^{T} (g(X \theta ) - \vec{y}) $$

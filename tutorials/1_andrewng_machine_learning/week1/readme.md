@@ -65,7 +65,7 @@ J_{\theta} = \frac{1}{2m} \sum\limits_{i=1}^m (h(x^{(i)}) - y^{(i)})^2
 \theta_j := \theta_j - \alpha \frac{\partial J}{\partial \theta_j}
 \end{equation}
 
-where $j$ is the id of the model parameter. In the case if a 1-D linear regression, $j$ ranges from 0 to 1. \alpha is the learning rate, and denotes the step size while approaching the local minima.
+where $j$ is the id of the model parameter. In the case if a 1-D linear regression, $j$ ranges from 0 to 1. $\alpha$ is the learning rate, and denotes the step size while approaching the local minima.
 
 * $\theta_j$ values should be updated simultaneously.
 

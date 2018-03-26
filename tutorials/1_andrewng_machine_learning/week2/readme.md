@@ -21,7 +21,9 @@
 
 * Two techniques to help with this are feature scaling and mean normalization.
 
-* $x_i := \dfrac{x_i - \mu_i}{s_i}$ where $s_i$ could be the range or the standard deviation.
+* Feature scaling: Divide by the range so that all the feature values are roughly between -1 and 1.
+
+* Mean normalization: Additionally, subtract the mean so that the feature values have zero mean. $x_i := \dfrac{x_i - \mu_i}{s_i}$ where $s_i$ could be the range or the standard deviation.
 
 ### 1d: Gradient descent in practice 2: Learning rate
 

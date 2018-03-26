@@ -45,7 +45,7 @@ $$ \theta = (X^T X)^{-1}X^T y $$
 
 where $X$ is called the design matrix, and each row of the design matrix represents the inputs of the $i^{th}$ training data set (i.e., each row of $X$ is $x^{(i)T}$).
 
-* No need to choose the learning parameter, and no need to iterate. However, slow for large values($> 10^6$) of the model parameters ($n$). Computing the inverse of $X^T X$ is an $O(n^3)$ operation.
+* No need to choose the learning parameter, no need to iterate, and no need to apply feature scaling and mean normalization. However, slow for large values($> 10^6$) of the model parameters ($n$). Computing the inverse of $X^T X$ is an $O(n^3)$ operation.
 
 ### 2b: Normal equation non-invertibility
 

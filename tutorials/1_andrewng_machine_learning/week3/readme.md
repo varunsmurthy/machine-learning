@@ -6,7 +6,7 @@
 
 * Two-class or binary-class vs multi-class classification problem.
 
-* One approach could be to use linear regression on the training data set and subsequently defining a threshold for classification. However, this method doesn't work well because classification is not actually a linear function.
+* One approach could be to use linear regression on the training data set and subsequently defining a threshold for classification. However, this method doesn't work well because classification is not actually a linear function (i.e., an outlier might severely change the slope of the linear regression, resulting in classification errors).
 
 ### 1b: Hypothesis representation
 

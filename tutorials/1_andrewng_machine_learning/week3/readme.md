@@ -42,7 +42,7 @@
 
 * The conditional cost function can be combined as 
 
-$$ \mathrm{Cost}(h_\theta(x),y) = - y \; \log(h_\theta(x)) - (1 - y) \log(1 - h_\theta(x))$$
+$$ \mathrm{Cost}(h_\theta(x),y) = - y \log(h_\theta(x)) - (1 - y) \log(1 - h_\theta(x))$$
 
 * The vectorized form of the cost equation is
 

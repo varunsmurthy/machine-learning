@@ -64,3 +64,13 @@ $$ \theta := \theta - \frac{\alpha}{m} X^{T} (g(X \theta ) - \vec{y}) $$
 * We first need to provide a function that evaluates the cost function and the various partial derivatives of the cost function with respect to the model parameters.
 
 * Then we can use octave's "fminunc()" optimization algorithm along with the "optimset()" function that creates an object containing the options we want to send to "fminunc()".
+
+## Lecture 3: Multiclass Classification
+
+### 3a: Multiclass Classification: One-vs-all
+
+* In multi-class classification, y can take multiple values. Say, y = {0,1...n}.
+
+* We divide our problem into n+1 (+1 because the index starts at 0) binary classification problems; in each one, we predict the probability that 'y' is a member of one of our classes.
+
+* $$ \begin{align*}& y \in \lbrace0, 1 ... n\rbrace \newline& h_\theta^{(0)}(x) = P(y = 0 | x ; \theta) \newline& h_\theta^{(1)}(x) = P(y = 1 | x ; \theta) \newline& \cdots \newline& h_\theta^{(n)}(x) = P(y = n | x ; \theta) \newline& \mathrm{prediction} = \max_i( h_\theta ^{(i)}(x) )\newline\end{align*} $$

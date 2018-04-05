@@ -74,3 +74,20 @@ $$ \theta := \theta - \frac{\alpha}{m} X^{T} (g(X \theta ) - \vec{y}) $$
 * We divide our problem into n+1 (+1 because the index starts at 0) binary classification problems; in each one, we predict the probability that 'y' is a member of one of our classes.
 
 * $$ \begin{align*}& y \in \lbrace0, 1 ... n\rbrace \newline& h_\theta^{(0)}(x) = P(y = 0 | x ; \theta) \newline& h_\theta^{(1)}(x) = P(y = 1 | x ; \theta) \newline& \cdots \newline& h_\theta^{(n)}(x) = P(y = n | x ; \theta) \newline& \mathrm{prediction} = \max_i( h_\theta ^{(i)}(x) )\newline\end{align*} $$
+
+## Lecture 4: Solving the problem of overfitting
+
+### 4a: Problem of overfitting
+
+* Underfitting, or high bias, is when the form of our hypothesis function h maps poorly to the trend of the data. It is usually caused by a function that is too simple or uses too few features. At the other extreme, overfitting, or high variance, is caused by a hypothesis function that fits the available data but does not generalize well to predict new data. It is usually caused by a complicated function that creates a lot of unnecessary curves and angles unrelated to the data.
+
+* There are two main options to address the issue of overfitting:
+
+    * Reduce the number of features:
+
+        * Manually select which features to keep.
+        * Use a model selection algorithm (studied later in the course).
+    * Regularization
+
+        * Keep all the features, but reduce the magnitude of parameters $θ_j$.
+        * Regularization works well when we have a lot of slightly useful features.

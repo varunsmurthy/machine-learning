@@ -8,7 +8,7 @@
 
 * Learning algorithms: A computer program is said to learn from experience E, with respect to some task T, and some performance measure P, if its performance on T as measured by P improves with experience E.
 
-* Two types of learning algorithms: Supervised and unsupervised.
+* Two types of learning algorithms: Supervised and unsupervised. Separately, also reinforcement and recommender systems.
 
 ### 1b: Supervised learning
 

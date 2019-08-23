@@ -125,3 +125,7 @@ $$
 $$
 
 * Recall that if $m < n$, then $X^TX$ is non-invertible. However, when we add the term λ⋅L, then $X^TX$ becomes invertible.
+
+### 4d: Regularized logistic regression
+
+* Similar to the linear regression, the term $\frac{\lambda}{2m} \sum\limits_{j=1}^n \theta_j^2$ is added to the cost function. Furthermore, the gradient descent expression also is similarly modified (multiplied by a scale factor < 1).

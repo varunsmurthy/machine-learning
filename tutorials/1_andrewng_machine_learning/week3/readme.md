@@ -114,4 +114,4 @@ $$
 \theta_j := \theta_j(1 - \alpha\frac{\lambda}{m}) - \alpha\frac{1}{m}\sum_{i=1}^m(h_\theta(x^{(i)}) - y^{(i)})x_j^{(i)}θ 
 $$
 
-The first term in the above equation, $$1 - \alpha\frac{\lambda}{m} < 1 $$.  Intuitively you can see it as reducing the value of $$\theta_j$$ by some amount on every update. Notice that the second term is now exactly the same as it was before.
+The first term in the above equation, $1 - \alpha\frac{\lambda}{m} < 1 $.  Intuitively you can see it as reducing the value of $\theta_j$ by some amount on every update. Notice that the second term is now exactly the same as it was before.

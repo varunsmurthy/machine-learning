@@ -91,3 +91,13 @@ $$ \theta := \theta - \frac{\alpha}{m} X^{T} (g(X \theta ) - \vec{y}) $$
 
         * Keep all the features, but reduce the magnitude of parameters $θ_j$.
         * Regularization works well when we have a lot of slightly useful features.
+        
+### 4b: Cost function
+
+* Regularization: If we have overfitting from our hypothesis function, we can reduce the weight that some of the terms in our function carry by increasing their cost.
+
+* $$ \begin{equation}
+J_{\theta} = \frac{1}{2m} \sum\limits_{i=1}^m (h(x^{(i)}) - y^{(i)})^2 + \lambda \sum\limits_{j=1}^n \theta_j^2
+\end{equation} $$
+
+* The λ, or lambda, is the regularization parameter. It determines how much the costs of our theta parameters are inflated.

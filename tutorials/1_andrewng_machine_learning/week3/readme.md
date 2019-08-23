@@ -96,8 +96,22 @@ $$ \theta := \theta - \frac{\alpha}{m} X^{T} (g(X \theta ) - \vec{y}) $$
 
 * Regularization: If we have overfitting from our hypothesis function, we can reduce the weight that some of the terms in our function carry by increasing their cost.
 
-* $$ \begin{equation}
-J_{\theta} = \frac{1}{2m} \sum\limits_{i=1}^m (h(x^{(i)}) - y^{(i)})^2 + \lambda \sum\limits_{j=1}^n \theta_j^2
-\end{equation} $$
+* $$ \begin{equation*}
+J_{\theta} = \frac{1}{2m} [\sum\limits_{i=1}^m (h(x^{(i)}) - y^{(i)})^2 + \lambda \sum\limits_{j=1}^n \theta_j^2]
+\end{equation*} $$
 
 * The λ, or lambda, is the regularization parameter. It determines how much the costs of our theta parameters are inflated.
+
+### 4c: Regularized linear regression
+
+* $$
+\begin{align*} & \text{Repeat}\ \lbrace \newline & \ \ \ \ \theta_0 := \theta_0 - \alpha\ \frac{1}{m}\ \sum_{i=1}^m (h_\theta(x^{(i)}) - y^{(i)})x_0^{(i)} \newline & \ \ \ \ \theta_j := \theta_j - \alpha\ \left[ \left( \frac{1}{m}\ \sum_{i=1}^m (h_\theta(x^{(i)}) - y^{(i)})x_j^{(i)} \right) + \frac{\lambda}{m}\theta_j \right] &\ \ \ \ \ \ \ \ \ \ j \in \lbrace 1,2...n\rbrace\newline & \rbrace \end{align*}
+$$
+
+* With some manipulation our update rule can also be represented as:
+
+$$
+\theta_j := \theta_j(1 - \alpha\frac{\lambda}{m}) - \alpha\frac{1}{m}\sum_{i=1}^m(h_\theta(x^{(i)}) - y^{(i)})x_j^{(i)}θ 
+$$
+
+The first term in the above equation, $$1 - \alpha\frac{\lambda}{m} < 1 $$.  Intuitively you can see it as reducing the value of $$\theta_j$$ by some amount on every update. Notice that the second term is now exactly the same as it was before.

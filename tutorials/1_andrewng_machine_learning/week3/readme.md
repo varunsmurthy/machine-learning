@@ -104,7 +104,9 @@ J_{\theta} = \frac{1}{2m} [\sum\limits_{i=1}^m (h(x^{(i)}) - y^{(i)})^2 + \lambd
 
 ### 4c: Regularized linear regression
 
-* $$
+* For gradient descent,
+
+$$
 \begin{align*} & \text{Repeat}\ \lbrace \newline & \ \ \ \ \theta_0 := \theta_0 - \alpha\ \frac{1}{m}\ \sum_{i=1}^m (h_\theta(x^{(i)}) - y^{(i)})x_0^{(i)} \newline & \ \ \ \ \theta_j := \theta_j - \alpha\ \left[ \left( \frac{1}{m}\ \sum_{i=1}^m (h_\theta(x^{(i)}) - y^{(i)})x_j^{(i)} \right) + \frac{\lambda}{m}\theta_j \right] &\ \ \ \ \ \ \ \ \ \ j \in \lbrace 1,2...n\rbrace\newline & \rbrace \end{align*}
 $$
 
@@ -115,3 +117,11 @@ $$
 $$
 
 The first term in the above equation, $1 - \alpha\frac{\lambda}{m} < 1 $.  Intuitively you can see it as reducing the value of $\theta_j$ by some amount on every update. Notice that the second term is now exactly the same as it was before.
+
+* For the normal equation,
+
+$$
+\begin{align*}& \theta = \left( X^TX + \lambda \cdot L \right)^{-1} X^Ty \newline& \text{where}\ \ L = \begin{bmatrix} 0 & & & & \newline & 1 & & & \newline & & 1 & & \newline & & & \ddots & \newline & & & & 1 \newline\end{bmatrix}\end{align*}
+$$
+
+* Recall that if $m < n$, then $X^TX$ is non-invertible. However, when we add the term λ⋅L, then $X^TX$ becomes invertible.

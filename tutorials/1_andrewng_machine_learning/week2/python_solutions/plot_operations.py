@@ -1,4 +1,5 @@
 from matplotlib import pyplot
+from mpl_toolkits import mplot3d
 
 
 def plot_1d_scatterplot(x_array,y_array,title,xlabel,ylabel,lim_list,marker_str,linewidth_num):
@@ -38,4 +39,15 @@ def plot_contour_plot(plot_array,x_vals,y_vals,title,xlabel,ylabel):
     pyplot.title(title)
     pyplot.xlabel(xlabel)
     pyplot.ylabel(ylabel)
+    pyplot.show()
+
+
+def plot_3d_scatterplot(x_array,y_array,z_array,color_str,title,xlabel,ylabel,zlabel):
+    ax = pyplot.axes(projection="3d")
+
+    ax.scatter3D(x_array, y_array, z_array, c=z_array, cmap=color_str)
+    ax.set_xlabel(xlabel)
+    ax.set_ylabel(ylabel)
+    ax.set_zlabel(zlabel)
+    pyplot.title(title)
     pyplot.show()

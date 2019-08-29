@@ -50,4 +50,28 @@ where $z$ is the logistic or sigmoid function.
 
 * We can then add a bias unit (equal to 1) to layer j after we have computed $a^{(j)}$. This will be element $a_0^{(j)}$ and will be equal to 1 when computing the subsequent layer.
 
-* Notice that in this last step, when describing the activation unit of the output layer, we are doing exactly the same thing as we did in logistic regression. Adding all these intermediate layers in neural networks allows us to more elegantly produce interesting and more complex non-linear hypotheses.
+* Notice that in the final step, when describing the activation unit of the output layer, we are doing exactly the same thing as we did in logistic regression. Adding all these intermediate layers in neural networks allows us to more elegantly produce interesting and more complex non-linear hypotheses.
+
+## Lecture 3: Applications
+
+### 3a: Examples and Intuitions
+
+* Representing basic logical gates (AND, OR, NOT) using neural netwroks:
+
+* The AND gate can be represented as
+
+$$
+\begin{align*}\begin{bmatrix}x_0 \newline x_1 \newline x_2\end{bmatrix} \rightarrow\begin{bmatrix}g(z^{(2)})\end{bmatrix} \rightarrow h_\Theta(x)\end{align*}
+$$
+
+where
+
+$$
+\Theta^{(1)} =\begin{bmatrix}-30 & 20 & 20\end{bmatrix}
+$$
+
+### 3b: Examples and Intuitions II
+
+* Some logical expressions (e.g., XNOR) cannot be easily represented using single layer neaural networks. In these cases, multiple layers can be used (e.g., NOR = AND OR NOR). So in this example, $a_1^{(2)} and a_1^{(2)}$ are AND and NOR, respectively, and $a_1^{(3)}$ is OR.
+
+* Short video showing how multiple layers of neural networks can be used for handwriting recognition.

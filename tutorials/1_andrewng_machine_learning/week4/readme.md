@@ -37,3 +37,17 @@ $$
 $$
 
 * $ \text{If network has $s_j$ units in layer $j$ and $s_{j+1}$ units in layer $j+1$, then $\Theta^{(j)}$ will be of dimension $s_{j+1} \times (s_j + 1)$.} $
+
+### 2b: Model representation II
+
+* Vectorized mplementation: First, we assign the input layer (which is a $n+1 x 1$ vector i.e., $x_0, x_1, x_2, ..x_n$ as the first hidden layer (i.e., $a^{(1)}$). Then the vectorized implementation for the subsequent layers is 
+
+$$
+a^{(j)} = z(\Theta^{(j-1)}a^{(j-1)})
+$$
+
+where $z$ is the logistic or sigmoid function. 
+
+* We can then add a bias unit (equal to 1) to layer j after we have computed $a^{(j)}$. This will be element $a_0^{(j)}$ and will be equal to 1 when computing the subsequent layer.
+
+* Notice that in this last step, when describing the activation unit of the output layer, we are doing exactly the same thing as we did in logistic regression. Adding all these intermediate layers in neural networks allows us to more elegantly produce interesting and more complex non-linear hypotheses.

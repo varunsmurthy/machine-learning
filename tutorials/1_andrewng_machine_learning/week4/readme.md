@@ -40,7 +40,7 @@ $$
 
 ### 2b: Model representation II
 
-* Vectorized mplementation: First, we assign the input layer (which is a $n+1 x 1$ vector i.e., $x_0, x_1, x_2, ..x_n$ as the first hidden layer (i.e., $a^{(1)}$). Then the vectorized implementation for the subsequent layers is 
+* Vectorized mplementation: First, we assign the input layer (which is a $n+1 \times 1$ vector i.e., $x_0, x_1, x_2, ..x_n$) as the first hidden layer (i.e., $a^{(1)}$). Then the vectorized implementation for the subsequent layers is 
 
 $$
 a^{(j)} = z(\Theta^{(j-1)}a^{(j-1)})
@@ -72,6 +72,14 @@ $$
 
 ### 3b: Examples and Intuitions II
 
-* Some logical expressions (e.g., XNOR) cannot be easily represented using single layer neaural networks. In these cases, multiple layers can be used (e.g., NOR = AND OR NOR). So in this example, $a_1^{(2)} and a_1^{(2)}$ are AND and NOR, respectively, and $a_1^{(3)}$ is OR.
+* Some logical expressions (e.g., XNOR) cannot be easily represented using single layer neaural networks. In these cases, multiple layers can be used (e.g., NOR = AND OR NOR). So in this example, $a_1^{(2)}$ and $a_1^{(2)}$ are AND and NOR, respectively, and $a_1^{(3)}$ is OR.
 
 * Short video showing how multiple layers of neural networks can be used for handwriting recognition.
+
+### 3c: Multi-class classification
+
+* The output layer will now have k units, where k is the number of classes. For a classification problem with 4 classes, if the input object is of class type 3, the output of the neural network will look like
+
+$$
+h_\Theta(x) =\begin{bmatrix}0 \newline 0 \newline 1 \newline 0 \newline\end{bmatrix}
+$$

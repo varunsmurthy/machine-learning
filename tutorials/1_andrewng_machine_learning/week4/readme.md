@@ -43,10 +43,10 @@ $$
 * Vectorized mplementation: First, we assign the input layer (which is a $n+1 \times 1$ vector i.e., $x_0, x_1, x_2, ..x_n$) as the first hidden layer (i.e., $a^{(1)}$). Then the vectorized implementation for the subsequent layers is 
 
 $$
-a^{(j)} = z(\Theta^{(j-1)}a^{(j-1)})
+a^{(j)} = g(\Theta^{(j-1)}a^{(j-1)})
 $$
 
-where $z$ is the logistic or sigmoid function. 
+where $g$ is the logistic or sigmoid function. 
 
 * We can then add a bias unit (equal to 1) to layer j after we have computed $a^{(j)}$. This will be element $a_0^{(j)}$ and will be equal to 1 when computing the subsequent layer.
 

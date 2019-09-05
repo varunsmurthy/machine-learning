@@ -1,4 +1,4 @@
-# Week 4: Neural Networks
+# Week 4: Neural Networks (Representation)
 
 ## Lecture 1: Motivations
 

@@ -15,5 +15,5 @@ Recall that in neural networks, we may have many output nodes. We denote $h_\The
 * For neural networks, the cost function is
 
 $$\begin{align*}
-J(\Theta) = - \frac{1}{m} \sum_{i=1}^m \sum_{k=1}^K y^{(i)}_k log(h_\Theta (x^{(i)})_k)  \end{align*}$$
+J(\Theta) = - \frac{1}{m} \sum_{i=1}^m \sum_{k=1}^K y^{(i)}_k   \end{align*}$$
 

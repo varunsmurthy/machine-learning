@@ -38,11 +38,11 @@ $$ \delta^{(l)} = ((\Theta^{(l)})^T \delta^{(l+1)}) .* (a^{(l)} .* (1 - a^{(l)})
     B. Once all the training set samples have been iterated through, update the main derivative as 
     
     $$
-    D^{(l)}\_{i,j} := \dfrac{1}{m}\left(\Delta^{(l)}\_{i,j} + \lambda\Theta^{(l)}\_{i,j}\right) if j \neq 0
+    D^{(l)}\_{i,j} := \dfrac{1}{m}\left(\Delta^{(l)}\_{i,j} + \lambda\Theta^{(l)}\_{i,j}\right) \hspace{4mm}if\hspace{4mm} j \neq 0
     $$
     
     $$
-    D^{(l)}\_{i,j} := \dfrac{1}{m}\left(\Delta^{(l)}\_{i,j}  if j \eq 0
+    D^{(l)}\_{i,j} := \dfrac{1}{m}\left(\Delta^{(l)}\_{i,j} \hspace{4mm} if \hspace{4mm} j = 0
     $$
     
     The capital-delta matrix D is used as an "accumulator" to add up our values as we go along and eventually compute our partial derivative. Thus we get $\frac \partial {\partial \Theta\_{ij}^{(l)}} J(\Theta) = D^{(l)}\_{i,j}$.

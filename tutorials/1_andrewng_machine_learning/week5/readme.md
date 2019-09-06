@@ -21,4 +21,6 @@ J(\Theta) = - \frac{1}{m} \sum_{i=1}^m \sum_{k=1}^K y^i_k log(h^i_k) + (1-y^i_k)
 
 * "Backpropagation" is neural-network terminology for minimizing our cost function, i.e., $\min_\Theta J(\Theta)$.
 
-* We need to compute the partial derivatives of $J(\Theta)$: $\dfrac{\partial}{\partial \Theta_{i,j}^{(l)}}J(\Theta)$.
+* We need to compute the partial derivatives of $J(\Theta)$: $\dfrac{\partial}{\partial \Theta_{i,j}^{(l)}}J(\Theta)$. To do this, we use the back-propagation algorithm.
+
+* First, we define $\delta^{(l)}$, which is the error for each layer. $\delta^{(l)}$ is $s_l \times 1$ vector.

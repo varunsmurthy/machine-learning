@@ -26,3 +26,11 @@ J(\Theta) = - \frac{1}{m} \sum_{i=1}^m \sum_{k=1}^K y^i_k log(h^i_k) + (1-y^i_k)
 * First, we define $\delta^{(l)}$, which is the error for each layer. $\delta^{(l)}$ is $s_l \times 1$ vector. For the output layer, $\delta^{(L)} = a^{(L)} - y$ for one training set sample $(x,y)$. Subsequently, 
 
 $$ \delta^{(l)} = ((\Theta^{(l)})^T \delta^{(l+1)}) .* (a^{(l)} .* (1 - a^{(l)}) \hspace{4mm} for \hspace{4mm} l = L-1,....,2$$.
+
+* Now that we have defined the error for each layer, the backpropagation algorithm given a training set $\lbrace (x^{(1)}, y^{(1)}) \cdots (x^{(m)}, y^{(m)})\rbrace$ is as follows:
+
+A. For training example $t = 1 to m$:
+
+1. Use forward propagation to initialize activation units of all layers $(a^{(l)} \hspace{4mm} for \hspace{4mm} l=2,3,…,L)$.
+2. Use backpropagation to get the errors for all layers $(\delta^{(l)} \hspace{4mm} for \hspace{4mm} l=L,L-1,......,2)$.
+3.

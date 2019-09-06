@@ -33,4 +33,4 @@ $$ \delta^{(l)} = ((\Theta^{(l)})^T \delta^{(l+1)}) .* (a^{(l)} .* (1 - a^{(l)})
 
     1. Use forward propagation to initialize activation units of all layers $(a^{(l)} \hspace{4mm} for \hspace{4mm} l=2,3,…,L)$.
     2. Use backpropagation to get the errors for all layers $(\delta^{(l)} \hspace{4mm} for \hspace{4mm} l=L,L-1,......,2)$.
-    3. $\Delta^{(l)}_{i,j} := \Delta^{(l)}_{i,j} + $
+    3. $ \Delta^{(l)}\_{i,j} := \Delta^{(l)}\_{i,j} + $

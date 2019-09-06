@@ -29,8 +29,20 @@ $$ \delta^{(l)} = ((\Theta^{(l)})^T \delta^{(l+1)}) .* (a^{(l)} .* (1 - a^{(l)})
 
 * Now that we have defined the error for each layer, the backpropagation algorithm given a training set $\lbrace (x^{(1)}, y^{(1)}) \cdots (x^{(m)}, y^{(m)})\rbrace$ is as follows:
 
-    A. For training example $t = 1 to m$:
+    A. For training example $t = 1$ to $m$:
 
     1. Use forward propagation to initialize activation units of all layers $(a^{(l)} \hspace{4mm} for \hspace{4mm} l=2,3,…,L)$.
     2. Use backpropagation to get the errors for all layers $(\delta^{(l)} \hspace{4mm} for \hspace{4mm} l=L,L-1,......,2)$.
-    3. $ \Delta^{(l)}\_{i,j} := \Delta^{(l)}\_{i,j} + a^{(l)}\_j \delta^{(l+1)}\_i$ or in the vectorized form: $ \Delta^{(l)} = \Delta^{(l)} + \delta^{(l+1)} (a^{(l)})^T$.
+    3. Update the accumulator matrices for each layer: $ \Delta^{(l)}\_{i,j} := \Delta^{(l)}\_{i,j} + a^{(l)}\_j \delta^{(l+1)}\_i$ or in the vectorized form: $ \Delta^{(l)} = \Delta^{(l)} + \delta^{(l+1)} (a^{(l)})^T$.
+    
+    B. Once all the training set samples have been iterated through, update the main derivative as 
+    
+    $$
+    D^{(l)}\_{i,j} := \dfrac{1}{m}\left(\Delta^{(l)}\_{i,j} + \lambda\Theta^{(l)}\_{i,j}\right) if j \neq 0
+    $$
+    
+    $$
+    D^{(l)}\_{i,j} := \dfrac{1}{m}\left(\Delta^{(l)}\_{i,j}  if j \eq 0
+    $$
+    
+    The capital-delta matrix D is used as an "accumulator" to add up our values as we go along and eventually compute our partial derivative. Thus we get $\frac \partial {\partial \Theta\_{ij}^{(l)}} J(\Theta) = D^{(l)}\_{i,j}$.

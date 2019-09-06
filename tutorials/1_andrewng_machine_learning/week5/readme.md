@@ -46,3 +46,9 @@ $$ \delta^{(l)} = ((\Theta^{(l)})^T \delta^{(l+1)}) .* (a^{(l)} .* (1 - a^{(l)})
     $$
     
     The capital-delta matrix D is used as an "accumulator" to add up our values as we go along and eventually compute our partial derivative. Thus we get $\frac \partial {\partial \Theta\_{ij}^{(l)}} J(\Theta) = D^{(l)}\_{i,j}$.
+    
+### 1c: Backpropagation: Intuition
+
+* Shows how back-propagation is the reverse of forward propagation. In forward propagation, the activation units of each layer (i.e., $a^{(l)}$) are propagated to the next layer. In backpropagation, the error units of each layer (i.e., $\delta^{(l)}$) are propagated to the previous layer.
+
+## Lecture 2: 

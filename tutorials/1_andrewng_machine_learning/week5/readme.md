@@ -17,3 +17,8 @@ Recall that in neural networks, we may have many output nodes. We denote $h_\The
 $$\begin{equation*}
 J(\Theta) = - \frac{1}{m} \sum_{i=1}^m \sum_{k=1}^K y^i_k log(h^i_k) + (1-y^i_k)\times(1-log(h^i_k)) + \frac{\lambda}{2m}\sum_{l=1}^{L-1} \sum_{i=1}^{s_{l+1}} \sum_{j=1}^{s_l} ( \Theta_{i,j}^{(l)})^2  \end{equation*}$$
 
+### 1b: Back-propagation algorithm
+
+* "Backpropagation" is neural-network terminology for minimizing our cost function, i.e., $\min_\Theta J(\Theta)$.
+
+* We need to compute the partial derivatives of $J(\Theta)$: $\dfrac{\partial}{\partial \Theta_{i,j}^{(l)}}J(\Theta)$.

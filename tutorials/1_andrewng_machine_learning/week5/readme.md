@@ -51,4 +51,10 @@ $$ \delta^{(l)} = ((\Theta^{(l)})^T \delta^{(l+1)}) .* (a^{(l)} .* (1 - a^{(l)})
 
 * Shows how back-propagation is the reverse of forward propagation. In forward propagation, the activation units of each layer (i.e., $a^{(l)}$) are propagated to the next layer. In backpropagation, the error units of each layer (i.e., $\delta^{(l)}$) are propagated to the previous layer.
 
-## Lecture 2: 
+## Lecture 2: Backpropagation in practice
+
+### 2c: Implementation note: Unrolling parameters
+
+* With neural networks, we are working with sets of matrices: $\Theta^{(l)}$ and $D^{(l)}$. In order to use optimizing functions such as "fminunc()" in Matlab, we will want to "unroll" all the elements and put them into one long vector: thetaVector = [ Theta1(:); Theta2(:); Theta3(:); ]. 
+
+* To recover the original matrices from the unrolled matrices (to use in the vectorized implementations), we can use reshape.

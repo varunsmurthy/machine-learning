@@ -59,7 +59,7 @@ $$ \delta^{(l)} = ((\Theta^{(l)})^T \delta^{(l+1)}) .* (a^{(l)} .* (1 - a^{(l)})
 
 * To recover the original matrices from the unrolled matrices (to use in the vectorized implementations), we can use reshape.
 
-### 2b: Grradient checking
+### 2b: Gradient checking
 
 * Gradient checking can be used to verify that back-propagation is working correctly to calculate the partial derivatives of the cost function w.r.t the model parameters.
 
@@ -68,3 +68,30 @@ $$ \delta^{(l)} = ((\Theta^{(l)})^T \delta^{(l+1)}) .* (a^{(l)} .* (1 - a^{(l)})
 $$\dfrac{\partial}{\partial\Theta\_j}J(\Theta) \approx \dfrac{J(\Theta\_1, \dots, \Theta\_j + \epsilon, \dots, \Theta\_n) - J(\Theta\_1, \dots, \Theta\_j - \epsilon, \dots, \Theta\_n)}{2\epsilon} ....... {\epsilon = 10^{-4}}$$
 
 * This when computed for $j = 1..n$ gives us the grad_approx vector. Once we compute our gradApprox vector, we can check that gradApprox ≈ deltaVector.
+
+
+### 2c: Random Initialization
+
+* Initializing all theta weights to zero does not work with neural networks. When we backpropagate, all nodes will update to the same value repeatedly.
+
+* Hence, we initialize each $\Theta^{(l)}\_{ij}$ to a random value between $[-\epsilon,\epsilon]$. This is called symmetry breaking.
+
+### 2d: Putting it all together
+
+* First, pick a network architecture; choose the layout of your neural network, including how many hidden units in each layer and how many layers in total you want to have.
+
+a) Number of input units = dimension of features $x^{(i)}$
+b) Number of output units = number of classes
+c) Number of hidden units per layer = usually more the better (must balance with cost of computation as it increases with more hidden units)
+d) Defaults: 1 hidden layer. If you have more than 1 hidden layer, then it is recommended that you have the same number of units in every hidden layer.
+
+* Training the neural network:
+
+a) Randomly initialize the weights.
+b) Implement forward propagation to get the activation units of each layer and the output $h\_\Theta (x^{(i)})$.
+c) Implement the cost function
+d) Implement backpropagation to compute partial derivatives.
+e) Use gradient checking to confirm that your backpropagation works. Then disable gradient checking.
+f) Use gradient descent or a built-in optimization function to minimize the cost function with the weights in theta.
+
+* However, keep in mind that $J(\Theta)$ is theoretically not convex and thus we can end up in a local minimum instead. This is usually not a concern in practice.

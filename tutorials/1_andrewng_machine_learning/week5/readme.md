@@ -80,18 +80,18 @@ $$\dfrac{\partial}{\partial\Theta\_j}J(\Theta) \approx \dfrac{J(\Theta\_1, \dots
 
 * First, pick a network architecture; choose the layout of your neural network, including how many hidden units in each layer and how many layers in total you want to have.
 
-a) Number of input units = dimension of features $x^{(i)}$
-b) Number of output units = number of classes
-c) Number of hidden units per layer = usually more the better (must balance with cost of computation as it increases with more hidden units)
-d) Defaults: 1 hidden layer. If you have more than 1 hidden layer, then it is recommended that you have the same number of units in every hidden layer.
+a) Number of input units = dimension of features $x^{(i)}$  
+b) Number of output units = number of classes  
+c) Number of hidden units per layer = usually more the better (must balance with cost of computation as it increases with more hidden units)  
+d) Defaults: 1 hidden layer. If you have more than 1 hidden layer, then it is recommended that you have the same number of units in every hidden layer.  
 
 * Training the neural network:
 
-a) Randomly initialize the weights.
-b) Implement forward propagation to get the activation units of each layer and the output $h\_\Theta (x^{(i)})$.
-c) Implement the cost function
-d) Implement backpropagation to compute partial derivatives.
-e) Use gradient checking to confirm that your backpropagation works. Then disable gradient checking.
-f) Use gradient descent or a built-in optimization function to minimize the cost function with the weights in theta.
+a) Randomly initialize the weights.  
+b) Implement forward propagation to get the activation units of each layer and the output $h\_\Theta (x^{(i)})$.  
+c) Implement the cost function.  
+d) Implement backpropagation to compute partial derivatives.  
+e) Use gradient checking to confirm that your backpropagation works. Then disable gradient checking.  
+f) Use gradient descent or a built-in optimization function to minimize the cost function with the weights in theta.  
 
 * However, keep in mind that $J(\Theta)$ is theoretically not convex and thus we can end up in a local minimum instead. This is usually not a concern in practice.

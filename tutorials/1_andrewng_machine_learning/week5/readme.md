@@ -53,8 +53,18 @@ $$ \delta^{(l)} = ((\Theta^{(l)})^T \delta^{(l+1)}) .* (a^{(l)} .* (1 - a^{(l)})
 
 ## Lecture 2: Backpropagation in practice
 
-### 2c: Implementation note: Unrolling parameters
+### 2a: Implementation note: Unrolling parameters
 
 * With neural networks, we are working with sets of matrices: $\Theta^{(l)}$ and $D^{(l)}$. In order to use optimizing functions such as "fminunc()" in Matlab, we will want to "unroll" all the elements and put them into one long vector: thetaVector = [ Theta1(:); Theta2(:); Theta3(:); ]. 
 
 * To recover the original matrices from the unrolled matrices (to use in the vectorized implementations), we can use reshape.
+
+### 2b: Grradient checking
+
+* Gradient checking can be used to verify that back-propagation is working correctly to calculate the partial derivatives of the cost function w.r.t the model parameters.
+
+* We can compute
+
+$$\dfrac{\partial}{\partial\Theta\_j}J(\Theta) \approx \dfrac{J(\Theta\_1, \dots, \Theta\_j + \epsilon, \dots, \Theta\_n) - J(\Theta\_1, \dots, \Theta\_j - \epsilon, \dots, \Theta\_n)}{2\epsilon} ....... {\epsilon = 10^{-4}}$$
+
+* This when computed for $j = 1..n$ gives us the grad_approx vector. Once we compute our gradApprox vector, we can check that gradApprox ≈ deltaVector.

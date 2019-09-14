@@ -1,5 +1,7 @@
 # Week 6: Advice for Applying ML and ML System Design
 
+## 6-Part I: Advice for Applying ML
+
 ## Lecture 1: Evaluating a Learning Algorithm
 
 ### 1a: Deciding what to try next
@@ -19,4 +21,15 @@
 * We can now calculate three separate error values for the three different sets using the following method:
     1) Optimize the parameters in $\Theta$ using the training set for each polynomial degree.
     2) Find the polynomial degree $d$ with the least error using the cross validation set.
-    3) Estimate the generalization error using the test set with $J\_test(\Theta^{(d)})$, ($d$ = theta from polynomial with lower error);
+    3) Estimate the generalization error using the test set with $J\_{test}(\Theta^{(d)})$, ($d$ = theta from polynomial with lower error);
+    
+## Lecture 2: Bias and Variance    
+
+### 2a: Diagnosing bias vs variance
+
+* In this section we examine the relationship between the degree of the polynomial d and the underfitting or overfitting of our hypothesis. High bias is underfitting and high variance is overfitting. Ideally, we need to find a golden mean between these two. We need to distinguish whether bias or variance is the problem contributing to bad predictions.
+
+* The training error will tend to decrease as we increase the degree d of the polynomial. At the same time, the cross validation error will tend to decrease as we increase d up to a point, and then it will increase as d is increased, forming a convex curve.
+
+* High bias (underfitting): $J\_{train}(\Theta^{(d)})$ is high, $J\_{cv}(\Theta^{(d)})$ is high  
+  High variance (overfitting): $J\_{train}(\Theta^{(d)})$ is low, $J\_{cv}(\Theta^{(d)})$ is high

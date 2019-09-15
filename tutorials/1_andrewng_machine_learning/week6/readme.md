@@ -49,7 +49,7 @@
     
 ### 2c: Learning curves
 
-* Plotting the cost function for the training ($J\_{train}(\Theta)$) and cross validation ($J\_{cv}(\Theta)$) sets as a function of the training set size ($m$). $J\_{train}(\Theta)$ will typically increase with $m$ as it becomes harder for the model to fit each sample. $J\_{cv}(\Theta)$ will typically decrease with $m$ as the model generally becomes better when it is training on a larger number of samples.
+* Plotting the cost function for the training ($J\_{train}(\Theta)$) and cross validation ($J\_{cv}(\Theta)$) sets as a function of the training set size ($m$). $J\_{train}(\Theta)$ will typically increase with $m$ as it becomes harder for the model to fit each sample. $J\_{cv}(\Theta)$ will typically decrease with $m$ as the model generally becomes better when it is being trained on a larger number of samples.
 
 * High bias case (underfitting): 
     1) $J\_{train}(\Theta)$ quickly increases to a large value as $m$ increases since the model is unable to capture the variance in the training samples.
@@ -62,3 +62,20 @@
     2) $J\_{cv}(\Theta)$ decreases as the model improves with larger $m$ and gets closer to $J\_{train}(\Theta)$.
     3) Thus, increasing the size of the training set is helpful in a high variance model.
     4) For a high variance case, the characteristic feature of the learning curves is the gradually decreasing difference between $J\_{train}(\Theta)$ and $J\_{cv}(\Theta)$ as $m$ increases.
+    
+
+### 2d: Deciding what to do next revisited
+
+* Our decision process can be broken down as follows:
+    1) Getting more training examples: Fixes high variance
+    2) Trying smaller sets of features: Fixes high variance
+    3) Adding features: Fixes high bias
+    4) Adding polynomial features: Fixes high bias
+    5) Decreasing λ: Fixes high bias
+    6) Increasing λ: Fixes high variance.
+    
+* Diagnosing Neural Networks: 
+    1) A neural network with fewer parameters is prone to underfitting. It is also computationally cheaper.
+    2)A large neural network with more parameters is prone to overfitting. It is also computationally expensive. In this case you can use regularization (increase $\lambda$) to address the overfitting.
+
+* Using a single hidden layer is a good starting default. You can train your neural network on a number of hidden layers using your cross validation set. You can then select the one that performs best.

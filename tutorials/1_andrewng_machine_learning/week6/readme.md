@@ -33,3 +33,32 @@
 
 * High bias (underfitting): $J\_{train}(\Theta^{(d)})$ is high, $J\_{cv}(\Theta^{(d)})$ is high  
   High variance (overfitting): $J\_{train}(\Theta^{(d)})$ is low, $J\_{cv}(\Theta^{(d)})$ is high
+  
+### 2b: Regularization and Bias/Variance
+
+* Regularization is a process by which the model parameters are scaled by some value $\lambda$ to prevent overfitting. As a result, when $\lambda$ is small, we have overfitting or high variance, and when $\lambda$ is large, we have underfitting or high bias. So, how do we choose the right $\lambda$? The following procedure is used:
+
+    1) Create a list of lambdas (i.e. 0,0.01,0.02,0.04,0.08,0.16,0.32,0.64,1.28,2.56,5.12,10.24).
+    2) Create a set of models with different degrees or any other variants.
+    3) Compute the cost function (without regularization terms) on the cross validation set for all $\lambda$s and all degrees.
+    4) Select the best combo that produces the lowest error on the cross validation set, and use this combination on the test set.
+    
+* Variation of cost function with $\lambda$: 
+    1) High $\lambda$: underfitting (high bias), $J\_{train}(\Theta)$ is high, $J\_{cv}(\Theta)$ is high .
+    2) Low $\lambda$: overfitting (high variance), $J\_{train}(\Theta)$ is low, $J\_{cv}(\Theta)$ is high .
+    
+### 2c: Learning curves
+
+* Plotting the cost function for the training ($J\_{train}(\Theta)$) and cross validation ($J\_{cv}(\Theta)$) sets as a function of the training set size ($m$). $J\_{train}(\Theta)$ will typically increase with $m$ as it becomes harder for the model to fit each sample. $J\_{cv}(\Theta)$ will typically decrease with $m$ as the model generally becomes better when it is training on a larger number of samples.
+
+* High bias case (underfitting): 
+    1) $J\_{train}(\Theta)$ quickly increases to a large value as $m$ increases since the model is unable to capture the variance in the training samples.
+    2) $J\_{cv}(\Theta)$ initially decreases as the model improves with larger $m$, but quickly plateaus to a large value.
+    3) Since $J\_{cv}(\Theta)$ plateaus to a high value, increasing the size of the training set by collecting more data is not helpful.
+    4) For a high bias case, the characteristic feature of the learning curves is the high values of both $J\_{train}(\Theta)$ and $J\_{cv}(\Theta)$ and the small difference between them.
+    
+* High variance case (overfitting):
+    1) $J\_{train}(\Theta)$ slowly increases as $m$ increases since the model is unable to capture all the variance in the training samples.
+    2) $J\_{cv}(\Theta)$ decreases as the model improves with larger $m$ and gets closer to $J\_{train}(\Theta)$.
+    3) Thus, increasing the size of the training set is helpful in a high variance model.
+    4) For a high variance case, the characteristic feature of the learning curves is the gradually decreasing difference between $J\_{train}(\Theta)$ and $J\_{cv}(\Theta)$ as $m$ increases.

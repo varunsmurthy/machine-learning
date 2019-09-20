@@ -79,3 +79,37 @@
     2)A large neural network with more parameters is prone to overfitting. It is also computationally expensive. In this case you can use regularization (increase $\lambda$) to address the overfitting.
 
 * Using a single hidden layer is a good starting default. You can train your neural network on a number of hidden layers using your cross validation set. You can then select the one that performs best.
+
+
+## 6-Part II: ML System Design
+
+## Lecture 3: Building a Spam classifier
+
+### 3a: Prioritizing What to Work On
+
+* System design example: Spam classifier
+    1) Decide on model features  (absence or presence of some $n$ separate words; 0s and 1s)
+    2) Check if high bias or high variance and perform relevant correction techniques.
+    
+### 3b: Error analysis
+
+* Manually examine the errors on examples in the cross validation set and try to spot a trend where most of the errors were made.
+
+* It is very important to get error results as a single, numerical value. Otherwise it is difficult to assess your algorithm's performance.
+
+## Lecture 4: Handling Skewed Data
+
+### 4a: Error metrics for skewed classes
+
+* Consider a binary classification problem where one of the classes occurs very rarely (e.g., malignant tumour in a general population). In such a case, we use two error metrics 
+
+    1) Precision: Fraction of all positive predictions that were correct (= true +ve/(true +ve + false +ve))
+    2) Recall: Fraction of all actual positive occurrences that were correctly identified (= true +ve/(true +ve + false -ve))
+    
+### 4b: Trading Off Precision and Recall
+
+* Instead of using 0.5 as the threshold for $h\_\theta(x)$ in logistic regression, use a varying threshold and compute the F score and maximize it to get the best combined values of precision and recall.  
+
+$$
+F\_1 = 2\frac{PR}{P+R}
+$$

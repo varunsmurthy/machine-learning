@@ -113,3 +113,9 @@
 $$
 F\_1 = 2\frac{PR}{P+R}
 $$
+
+## Lecture 5: Using Large Datasets
+
+### 5a: Data for machine learning
+
+* High bias can be overcome by having a model with a large number of features. High variance can be overcome by having a large training dataset (since a model cannot precisely fit all data points). 

@@ -27,7 +27,35 @@
 * Consider the optimization objective for SVMs (the cost function) and assume that C is very large. Rewriting the regularization term using the norm of the $\theta$ vector, we get,
 
 $$
-\begin{align*} \min\_\theta & \frac{1}{2}\sum\_{j=1}^n\theta\_j^2\\ \mbox{s.t.} & \|\theta\|\cdot p^{(i)} \geq 1\quad \mbox{if}\ y^{(i)} = 1\\ & \|\theta\|\cdot p^{(i)} \leq -1\quad \mbox{if}\ y^{(i)} = 0 \end{align*}
+\begin{align*} \min\_\theta & \frac{1}{2}\sum\_{j=1}^n\theta\_j^2\\ \mbox{s.t.} & \|\theta\|\cdot p^{(i)} \geq 1\quad \mbox{if}\ y^{(i)} = 1, \\ & \|\theta\|\cdot p^{(i)} \leq -1\quad \mbox{if}\ y^{(i)} = 0 \end{align*}
 $$
 
 * Consider $\theta\_0 = 0$ so that the decision boundary passes through the origin to simplify things. The $\theta$ vector is perpendicular to the decision boundary. Thus, the decision boundary is chosen with a large margin so as to maximize (or minimize) $p^{(i)}$.
+
+## Lecture 2: Kernels
+
+### 2a: Kernels I
+
+* SVMs tend to do well for large margin linear classifications. For non-linear classifications, the alternate approach is to either use polynomial terms, artificial neural networks, or kernel functions for features.
+
+* Landmarks, similarity functions, Gaussian kernels, features (see lecture notes for formulae). Features are computed for each training set sample, and in the case of Gaussian kernels, is high when the sample is close to the landmark in feature space and zero when far.
+
+* The $\sigma$ term in the Gaussian kernel represents the width of the kernel function, with larger values resulting in wider functions.
+
+### 2b: Kernels II
+
+* Choosing landmarks: Each training set sample is a landmark. Thus, if there are m training set samples, there are m features for each sample. The model parameters ($\theta$) are determined by minimizing the cost function computed with the kernel features instead of the input data features.
+
+* If the parameter C is large, the $\lambda$ is small, leading to overfitting or high variance. If C is small, then we have underfitting or high bias.
+
+* If the standdard deviation ($\sigma$) is large, we have underfitting and if it is small we have overfitting.
+
+## Lecture 3: SVMs in practice
+
+### 3a: Using an SVM
+
+* Specifications while using an inbuilt library: C, and the type of kernel.
+
+* Peform feature scaling when using SVMs.
+
+* If n >= m, use logistic regression (since the number of kernel features will be small). If m > n, use SVMs with kernel functions. If m >> n, use logistic regression since the number of features becomes very large.  

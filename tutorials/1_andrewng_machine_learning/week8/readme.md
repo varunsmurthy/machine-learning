@@ -54,3 +54,9 @@
 * Compute the covariance matrix of the training sample ($\Sigma$). Check notes for formula; vectorized implementation is $\frac{X^T X}{m}$.
 * Compute the eigen vector of $\Sigma$; the first k columns are the k $n \times 1$ vectors which form the plane onto which the training samples are projected on.
 * $z^{(i)}$ is $u^T x^{(i)}$ and is a $k \times 1$ vector.
+
+## Lecture 4: Applying PCA
+
+### 4a: Reconstruction from compressed representation
+
+* Obtaining $x^{(i)}$ from $z^{(i)}$: $x^{(i)} = u z^{(i)}$.

@@ -46,11 +46,11 @@
 
 ### 3a: PCA problem formulation
 
-* Reduce from n-dimnsions to k-dimensions: Find k vectors u^{(1)}...u^{(k)} onto which to project each training set sample, so as to minimize the projection error.
+* Reduce from n-dimnsions to k-dimensions: Find k vectors $u^{(1)}...u^{(k)}$ onto which to project each training set sample, so as to minimize the projection error.
 
 ### 3b: PCA algorithm
 
 * Perform feature scaling and mean normalization.
 * Compute the covariance matrix of the training sample ($\Sigma$). Check notes for formula; vectorized implementation is $\frac{X^T X}{m}$.
-* Compute the eigen vector of $\Sigma$; the first k columns are the k $n \times 1$ vectors which form the plane onto which ass training samples are projected on.
+* Compute the eigen vector of $\Sigma$; the first k columns are the k $n \times 1$ vectors which form the plane onto which the training samples are projected on.
 * $z^{(i)}$ is $u^T x^{(i)}$ and is a $k \times 1$ vector.

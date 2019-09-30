@@ -45,6 +45,10 @@
 
 * If there are any correlations between features, then the product of the univariate gaussian distributions of the features may not function well. In such cases, we can use the multi-variate Gaussian distribution. Here, mean $\mu \in R^n$ and the covariance matrix $\Sigma \in R^{n \times n}$. For formula of the distribution, see notes. 
 
-* The diagonal ellements of the covariance matrix $\Sigma$ represent the variance in the different features and the off diagonal elements represent the correlation between the features (positive values imply positive correlation, larger values imply higher correlation).
+* The diagonal elements of the covariance matrix $\Sigma$ represent the variance in the different features and the off diagonal elements represent the correlation between the features (positive values imply positive correlation, larger values imply higher correlation, i.e., narrower scatter).
 
 ### 3b: Anomaly Detection using the Multivariate Gaussian Distribution
+
+* The multivariate Gaussian model can automatically capture correlations between different features in x. However, the multivariate model is computationally extensive when $n$ is very large (since the inverse of the covariance matrix $\Sigma$ has to be computed). Furthermore, $\Sigma$ is non-invertible when $m < n$, and if there are any features that are linearly dependent (redundant).
+
+* The univariate model p(x\_1;\mu\_1,\sigma\_1^2)\times\dots\times p(x\_n;\mu\_n,\sigma\_n^2) corresponds to a multivariate Gaussian where the contours of p(x;\mu,\Sigma) are axis-aligned. However, since this model cannot explicitly capture the correlations between features, these relations between features have to be engineered (by adding additional features).

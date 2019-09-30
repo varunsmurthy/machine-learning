@@ -59,4 +59,12 @@
 
 ### 4a: Reconstruction from compressed representation
 
-* Obtaining $x^{(i)}$ from $z^{(i)}$: $x^{(i)} = u z^{(i)}$.
+* Obtaining $x^{(i)}$ from $z^{(i)}$: $x\_{approx}^{(i)} = u z^{(i)}$.
+
+### 4b: Choosing the number of principal components
+
+* Define the average squared projection error: average squared distance between $x^{(i)}$ and $x\_{approx}^{(i)}$.  
+* Define the variance in the data: average squared norm of the data.  
+* The number of principal components is the smallest value $k$ for which the ratio of the average squared projection error and the total variance in data is less than 0.01 or 1%. In other words, the smallest number of pricipal components for which 99% of the variance in data is retained.
+* One approach is to check the variance captured for different values of $k$ and chose the value for which 99% of the variance is captured. 
+* Alternatively, the matrix $S$ that is given by $[U,S,V] = svd(\Sigma)$ is a $n \times n$ diagonal matrix whose diagonal elements $S\_{ii}$ gives the cumulative variance captured by the first $i$ eigen vectors. 

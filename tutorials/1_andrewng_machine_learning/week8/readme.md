@@ -65,6 +65,12 @@
 
 * Define the average squared projection error: average squared distance between $x^{(i)}$ and $x\_{approx}^{(i)}$.  
 * Define the variance in the data: average squared norm of the data.  
-* The number of principal components is the smallest value $k$ for which the ratio of the average squared projection error and the total variance in data is less than 0.01 or 1%. In other words, the smallest number of pricipal components for which 99% of the variance in data is retained.
+* The number of principal components is the smallest value $k$ for which the ratio of the average squared projection error and the total variance in data is less than 0.01 or 1%. In other words, the smallest number of principal components for which 99% of the variance in data is retained.
 * One approach is to check the variance captured for different values of $k$ and chose the value for which 99% of the variance is captured. 
 * Alternatively, the matrix $S$ that is given by $[U,S,V] = svd(\Sigma)$ is a $n \times n$ diagonal matrix whose diagonal elements $S\_{ii}$ gives the cumulative variance captured by the first $i$ eigen vectors. 
+
+### 4c: Advice for applying PCA
+
+* Apply PCA on the training data set to get the dominant vectors. Use the same mapping on the validation and test datasets.  
+* Do not use PCA to reduce the number of features to prevent overfitting (use regularization instead).
+* Also, try applying the ML model without PCA first; include PCA later only if the model does not work as expected.

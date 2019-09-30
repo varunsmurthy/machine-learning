@@ -43,7 +43,7 @@
 
 ### 3a: Multivariate Gaussian Distribution
 
-* If there are any correlations between features, then the product of the univariate gaussian distributions of the features may not function well. In such cases, we can use the multi-variate Gaussian distribution. Here, mean $\mu \in R^n$ and the covariance matrix $\Sigma \in R^{n\timesn}$. For formula of the distribution, see notes. 
+* If there are any correlations between features, then the product of the univariate gaussian distributions of the features may not function well. In such cases, we can use the multi-variate Gaussian distribution. Here, mean $\mu \in R^n$ and the covariance matrix $\Sigma \in R^{n \times n}$. For formula of the distribution, see notes. 
 
 * The diagonal ellements of the covariance matrix $\Sigma$ represent the variance in the different features and the off diagonal elements represent the correlation between the features (positive values imply positive correlation, larger values imply higher correlation).
 

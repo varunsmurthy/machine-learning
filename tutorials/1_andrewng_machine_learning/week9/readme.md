@@ -52,3 +52,13 @@
 * The multivariate Gaussian model can automatically capture correlations between different features in x. However, the multivariate model is computationally extensive when $n$ is very large (since the inverse of the covariance matrix $\Sigma$ has to be computed). Furthermore, $\Sigma$ is non-invertible when $m < n$, and if there are any features that are linearly dependent (redundant).
 
 * The univariate model $p(x\_1;\mu\_1,\sigma\_1^2)\times\dots\times p(x\_n;\mu\_n,\sigma\_n^2)$ corresponds to a multivariate Gaussian where the contours of $p(x;\mu,\Sigma)$ are axis-aligned. However, since this model cannot explicitly capture the correlations between features, these relations between features have to be engineered (by adding additional features).
+
+## 9 Part 2: Recommender Systems
+
+## Lecture 4: Predicting Movie Ratings
+
+### 4a: Problem Formulation
+
+* $n\_u, n\_m, r(i,j), y^{(i,j)}$: number of users, number of movies, 1 if the $i^{th}$ movie has been rated by the $j^{th}$ user, value of the rating.
+
+* The problem statement of the movie recommendation system is to predict $y^{(i,j)}$ when $r(i,j)$ is undefined.

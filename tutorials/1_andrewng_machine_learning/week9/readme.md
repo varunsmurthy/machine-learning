@@ -62,3 +62,25 @@
 * $n\_u, n\_m, r(i,j), y^{(i,j)}$: number of users, number of movies, 1 if the $i^{th}$ movie has been rated by the $j^{th}$ user, value of the rating.
 
 * The problem statement of the movie recommendation system is to predict $y^{(i,j)}$ when $r(i,j)$ is undefined.
+
+### 4b: Content based recommendations
+
+* Model features could possibly define some content-based characteristics of the movies (e.g., action, romance, etc.) as a quantitative value (a funny action movie could have features as comedy = 0.5 and action = 0.5). For each user $j$, we can then form a hypothesis for movie rating prediction based on linear regression. The model parameters for each user will be $\theta^{(j)}$.
+
+* Linear regression can be applied by first noting the cost function (for all users) and minimizing it using gradient descent (see notes for notes).
+
+* However, this method of predicting movie ratings for all users requires information about the content of each movie, which may not be possible to obtain for a large number of movies.
+
+## Lecture 5: Collaberative Filtering
+
+### 5a: Collaberative Filtering
+
+* Here, let's say we have the model parameters for all the users (i.e., $\theta^{(j)}$ for all users) and some movie ratings $y^{(i,j)}$ just as in the case of content based recommendations.
+
+* The goal is to find the model features for all the movies (i.e., $x^{(i)}$ for all movies). We can now write a cost function for each movie with the cost function being dependent on $x^{(i)}$ instead of $\theta^{(j)}$. The regularization term also has $x^{(i)}$ instead of $\theta^{(j)}$.
+
+### 5b: Collaberative filtering algorithm
+
+* We can alternatively apply content based recommendation and collaberative filtering to learn the model features for each movie and the model parameters for each user.
+
+* Alternatively, we can write a cost function that is dependent on $x^{(i)}$ and $\theta^{(j)}$ and minimize it with respect to both.
